@@ -296,7 +296,7 @@ interface SavedSubServices {
 }
 
 const GenreTab: React.FC<GenreTabProps> = React.memo((props) => {
-  const { currentGenre, isPartials } = props;
+  const { currentGenre } = props;
   const subGenreData = subGenres[currentGenre.split('-')[0]];
 
   const router = useRouter();
@@ -385,9 +385,9 @@ const GenreTab: React.FC<GenreTabProps> = React.memo((props) => {
         {subGenreData ? (
           <li>
             <SubServicesList>
-              {subGenreData.map((service, index) => (
+              {subGenreData.map((service) => (
                 <TabItem
-                  key={index}
+                  key={service.name}
                   href={service.path}
                   activePath={service.activePaths}
                   label={service.name}

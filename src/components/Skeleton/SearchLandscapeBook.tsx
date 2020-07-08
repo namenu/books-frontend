@@ -1,3 +1,4 @@
+import React from 'react';
 import { css } from '@emotion/core';
 
 import MetaWrapper from '../Search/SearchLandscapeBook/MetaWrapper';

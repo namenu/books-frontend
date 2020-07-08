@@ -292,7 +292,7 @@ export const GNB: React.FC<GNBProps> = React.memo((props: GNBProps) => {
 
   const [loginPath, setLoginPath] = useState(initialLoginPath);
   const [signUpPath, setSignUpPath] = useState(initialSignupPath);
-  const [cashOrderPath, setCashOrderPath] = useState(initialCashOrderPath);
+  const [cashOrderPath] = useState(initialCashOrderPath);
 
   const [origin, setOrigin] = useState('');
 

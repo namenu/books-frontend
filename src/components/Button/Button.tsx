@@ -35,6 +35,6 @@ const StyledButton = styled.button<{ buttonStyle: 'primary' | 'secondary' }, RID
   outline: none;
 `;
 
-export const Button: React.FC<ButtonProps> = (props) => (
-  <StyledButton buttonStyle={props.type} css={props.wrapperCSS}>{props.label}</StyledButton>
+export const Button: React.FC<ButtonProps> = ({ type, label, wrapperCSS }) => (
+  <StyledButton buttonStyle={type} css={wrapperCSS}>{label}</StyledButton>
 );

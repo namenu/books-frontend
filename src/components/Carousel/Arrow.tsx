@@ -43,7 +43,7 @@ export const arrowTransition = css`
 
 const Arrow: React.FC<ArrowProps> = (props) => {
   const {
-    color, side, wrapperStyle, onClickHandler, arrowType,
+    color, side, wrapperStyle, onClickHandler, arrowType, className, label,
   } = props;
   const handleClick = (
     e: React.MouseEvent<HTMLButtonElement>,
@@ -76,11 +76,11 @@ const Arrow: React.FC<ArrowProps> = (props) => {
         defaultOpacity,
         wrapperStyle,
       ]}
-      className={props.className}
+      className={className}
     >
       { arrowType === 'bold' ? <ArrowBoldV css={mergedStyle} /> : <ArrowV css={mergedStyle} />}
-      <span className="a11y" aria-label={props.label}>
-        {props.label}
+      <span className="a11y" aria-label={label}>
+        {label}
       </span>
     </button>
   );

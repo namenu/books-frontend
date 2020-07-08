@@ -59,10 +59,11 @@ export function AccountProvider(props: { children?: React.ReactNode }) {
     return () => cancel.cancel();
   }, []);
 
+  const { children } = props;
   return React.createElement(
     AccountContext.Provider,
     { value: account },
-    props.children,
+    children,
   );
 }
 

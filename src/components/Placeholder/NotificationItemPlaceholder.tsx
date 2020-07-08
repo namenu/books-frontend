@@ -59,8 +59,8 @@ interface NotificationItemPlaceholderProps {
   opacity: number;
 }
 
-const NotificationItemPlaceholder: React.FC<NotificationItemPlaceholderProps> = (props) => (
-  <NotificationPlaceholderWrap opacity={props.opacity}>
+const NotificationItemPlaceholder: React.FC<NotificationItemPlaceholderProps> = ({ opacity }) => (
+  <NotificationPlaceholderWrap opacity={opacity}>
     <NotificationThumbnail />
     <NotificationMeta>
       <NotificationTitle />

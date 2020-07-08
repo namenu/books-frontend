@@ -30,15 +30,16 @@ export default function ThumbnailWithBadge(props: Props) {
     sizes,
     className,
     onlyAdultBadge,
+    title,
   } = props;
   const bookDetail = useBookSelector(bId);
-  const title = props.title || bookDetail?.title || '';
+  const bookTitle = title || bookDetail?.title || '';
   const singlePriceInfo = bookDetail?.price;
   const seriesPriceInfo = bookDetail?.series?.price;
   return (
     <ThumbnailRenderer
       order={order}
-      title={title}
+      title={bookTitle}
       className={className}
       sizes={sizes}
       slug={slug}

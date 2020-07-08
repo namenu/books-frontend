@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { ConnectedInitializeProps } from 'src/types/common';
 import Head from 'next/head';
-import { NextComponentType } from 'next';
 import { GenreTab } from 'src/components/Tabs';
 import PageTitle from 'src/components/PageTitle/PageTitle';
 import { css } from '@emotion/core';
@@ -306,10 +305,11 @@ const sectionCSS = css`
   )}
 `;
 function CategoryListPage(props: CategoryListPageProps) {
+  const { categoryList: categories } = props;
   const [isMounted, setMounted] = useState(false);
 
   const [categoryList] = useState(
-    props.categoryList || { general: [], curatedCategory: [] },
+    categories || { general: [], curatedCategory: [] },
   );
   const isTablet = useIsTablet();
   useEffect(() => {
@@ -339,8 +339,8 @@ function CategoryListPage(props: CategoryListPageProps) {
   );
 }
 
-// Todo Initial Fetch
-CategoryListPage.getInitialProps = async (props: ConnectedInitializeProps) => ({
+// Todo Remove!
+CategoryListPage.getInitialProps = (props: ConnectedInitializeProps) => ({
   q: props.query.q,
   categoryList: categoryMock,
 });

@@ -279,7 +279,7 @@ const NotificationPage: React.FC<NotificationPageProps> = (props) => {
             ) : (
               items.map((item, index) => (
                 <NotificationItem
-                  key={index}
+                  key={item.id}
                   createdAtTimeAgo={timeAgo(item.createdAt)}
                   item={item}
                   landingUrl={useDeeplinkUrl && item.deeplinkUrl ? item.deeplinkUrl : item.landingUrl}

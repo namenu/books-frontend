@@ -42,14 +42,16 @@
     "isolatedModules": true
   },
   "files": [
-    "./src/types/svg.d.ts",
+    "src/types/svg.d.ts",
     "src/types/global.d.ts"
   ],
   "include": [
-    "src/**/*"
+    "src/**/*",
+    "src/tests/utils/MockIO.ts",
+    "src/tests/utils/makeStore.ts",
+    "src/tests/setup.js"
   ],
   "exclude": [
-    "node_modules/**/*",
-    "**/tests/**/*"
+    "node_modules/**/*"
   ]
 }

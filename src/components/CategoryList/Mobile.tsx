@@ -75,6 +75,7 @@ const CategoryCollapse: React.FC<CategoryCollapseProps> = (props) => {
             ]}
           >
             <button
+              type="button"
               css={css`
                 display: flex;
                 justify-content: space-between;
@@ -198,7 +199,7 @@ const CategoryCollapse: React.FC<CategoryCollapseProps> = (props) => {
   );
 };
 
-const Mobile: React.FC<CategoryListProps> = (props) => {
+const Mobile: React.FC<CategoryListProps> = ({ categoryList }) => {
   const [selectedCategory, setCategory] = useState<ParentCategory| null>({
     id: 1,
     name: '전체',
@@ -222,7 +223,7 @@ const Mobile: React.FC<CategoryListProps> = (props) => {
         <CategoryCollapse
           selectedCategory={selectedCategory}
           handleSelectCategory={handleSelectCategory}
-          categories={props.categoryList.general}
+          categories={categoryList.general}
         />
       </section>
       <section>
@@ -230,7 +231,7 @@ const Mobile: React.FC<CategoryListProps> = (props) => {
         <CategoryCollapse
           selectedCategory={selectedCategory}
           handleSelectCategory={handleSelectCategory}
-          categories={props.categoryList.curatedCategory}
+          categories={categoryList.curatedCategory}
         />
       </section>
     </div>

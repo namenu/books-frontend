@@ -1,3 +1,4 @@
+import React from 'react';
 import styled from '@emotion/styled';
 
 import { VERTICAL_RIGHT_ARROW_ICON_URL } from 'src/constants/icons';

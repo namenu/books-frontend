@@ -138,13 +138,13 @@ interface InstantSearchResultProps {
 }
 
 // Todo 사용 컴포넌트마다 다른 options 사용해서 보여주기
-const AuthorLabel: React.FC<{ author: string; authors: SearchTypes.AuthorsInfo[] }> = (props) => {
-  const viewedAuthors = props.authors
-    && props.authors
-      .filter((author) => author.role !== 'translator')
-      .map((author) => author.name);
+const AuthorLabel: React.FC<{ author: string; authors: SearchTypes.AuthorsInfo[] }> = ({ authors, author }) => {
+  const viewedAuthors = authors
+    && authors
+      .filter((authorItem) => authorItem.role !== 'translator')
+      .map((authorItem) => authorItem.name);
   if (!viewedAuthors || viewedAuthors.length === 0) {
-    return <Author>{props.author}</Author>;
+    return <Author>{author}</Author>;
   }
 
   return (

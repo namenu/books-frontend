@@ -6,15 +6,15 @@ interface PartialSeparatorProps {
 }
 
 export const PartialSeparator: React.FC<PartialSeparatorProps> = (props) => {
-  const { name, wrapped } = props;
+  const { name, wrapped, children } = props;
   if (wrapped) {
     return (
       <>
         <style dangerouslySetInnerHTML={{ __html: `<!-- ${name}_START -->` }} />
-        {props.children}
+        {children}
         <style dangerouslySetInnerHTML={{ __html: `<!-- ${name}_END -->` }} />
       </>
     );
   }
-  return <>{props.children}</>;
+  return <>{children}</>;
 };

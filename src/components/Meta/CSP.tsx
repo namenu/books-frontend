@@ -1,3 +1,4 @@
+import React from 'react';
 import builder from 'content-security-policy-builder';
 
 const thirdPartyVendors = [

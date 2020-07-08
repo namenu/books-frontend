@@ -93,7 +93,7 @@ export default function PriceInfo(props: {
   genre: string;
 }) {
   const { searchApiResult, bookApiResult, genre } = props;
-  if (!props.bookApiResult) {
+  if (!bookApiResult) {
     return null;
   }
   const {

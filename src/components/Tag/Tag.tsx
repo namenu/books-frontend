@@ -56,6 +56,7 @@ export default class Tag extends React.Component {
   public static SomeDeal = SomeDealTag;
 
   public render() {
-    return <>{this.props.children}</>;
+    const { props } = this;
+    return <>{props.children}</>;
   }
 }

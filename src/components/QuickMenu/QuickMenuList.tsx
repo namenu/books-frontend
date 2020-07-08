@@ -128,7 +128,7 @@ const Section = styled.section`
   position: relative;
 `;
 
-export const QuickMenuList: React.FC<QuickMenuListProps> = (props) => (
+export const QuickMenuList: React.FC<QuickMenuListProps> = ({ items }) => (
   <Section>
     <h2 className="a11y">퀵 메뉴</h2>
     <ScrollContainer
@@ -137,7 +137,7 @@ export const QuickMenuList: React.FC<QuickMenuListProps> = (props) => (
       css={centered}
     >
       <MenuList>
-        {props.items.map((menu, index) => (
+        {items.map((menu, index) => (
           <MemoizedQuickMenuItem key={index} menu={menu} />
         ))}
       </MenuList>

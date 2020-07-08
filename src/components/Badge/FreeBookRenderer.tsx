@@ -26,10 +26,11 @@ const FreeBookBadge = styled.span`
 `;
 
 const FreeBookRenderer: React.FC<FreeBookRendererProps> = (props) => {
-  if (props.freeBookCount && props.freeBookCount > 0) {
+  const { freeBookCount, unit } = props;
+  if (freeBookCount && freeBookCount > 0) {
     return (
       <FreeBookBadge>
-        {`${props.freeBookCount}${props.unit} 무료`}
+        {`${freeBookCount}${unit} 무료`}
       </FreeBookBadge>
     );
   }

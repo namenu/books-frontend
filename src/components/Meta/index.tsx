@@ -1,3 +1,4 @@
+import React from 'react';
 import Head from 'next/head';
 
 import Favicon from 'src/components/Meta/Favicon';

@@ -7,7 +7,7 @@ interface MyRidiProps {
 }
 
 export default class MyRidi extends React.PureComponent<MyRidiProps> {
-  public static async getInitialProps(props: ConnectedInitializeProps) {
+  public static getInitialProps(props: ConnectedInitializeProps) {
     return { q: props.query.q };
   }
 

@@ -208,19 +208,18 @@ const ItemList: React.FC<ItemListProps> = (props) => {
 };
 
 const RankingBookList: React.FC<RankingBookListProps> = (props) => {
-  const books = props.items;
   const {
-    genre, type, showSomeDeal, slug,
+    genre, type, showTimer, extra, title, showSomeDeal, slug, items: books,
   } = props;
 
   return (
     <SectionWrapper>
-      {props.title && (
+      {title && (
         <SectionTitle>
-          {props.showTimer && <Timer />}
+          {showTimer && <Timer />}
           <SectionTitleLink
-            title={props.title}
-            href={props.extra?.detail_link}
+            title={title}
+            href={extra?.detail_link}
           />
         </SectionTitle>
       )}

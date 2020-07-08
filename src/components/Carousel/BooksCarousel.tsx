@@ -41,7 +41,7 @@ interface BooksCarouselProps {
 export default function BooksCarousel(props: BooksCarouselProps) {
   const { children, className, ...restProps } = props;
   const nodes = Array.from(
-    { length: props.totalItems },
+    { length: restProps.totalItems },
     (_, index) => children({ index, itemWidth: props.itemWidth }),
   );
 

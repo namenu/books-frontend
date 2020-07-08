@@ -87,6 +87,7 @@ const subCategoryItemCSS = (theme: RIDITheme) => css`
 const CuratedCategoryList: React.FC<{ category: ParentCategory }> = React.memo((props) => (
   <>
     <button
+      type="button"
       css={css`
         padding: 10px;
         margin-top: 4px;
@@ -146,9 +147,9 @@ export interface CategoryListProps {
   categoryList: CategoryListScheme;
 }
 
-const Desktop: React.FC<CategoryListProps> = (props) => {
+const Desktop: React.FC<CategoryListProps> = ({ categoryList: categories }) => {
   const [categoryList] = useState(
-    props.categoryList || { general: [], curatedCategory: [] },
+    categories || { general: [], curatedCategory: [] },
   );
   const [selectedCategory, setCategory] = useState(categoryList.general[0]);
   return (

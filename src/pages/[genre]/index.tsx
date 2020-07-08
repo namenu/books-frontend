@@ -61,9 +61,9 @@ export const Home: NextPage<HomeProps> = (props) => {
   const dispatch = useDispatch();
   const route = useRouter();
 
-  const { lazyLoadBIds, genre = 'general' } = props;
+  const { lazyLoadBIds, genre = 'general', branches: _branches } = props;
   const previousGenre = usePrevious(genre);
-  const [branches, setBranches] = useState(props.branches || []);
+  const [branches, setBranches] = useState(_branches || []);
 
   useEffect(() => {
     const cookies = new Cookies();
@@ -126,7 +126,7 @@ export const Home: NextPage<HomeProps> = (props) => {
       </Head>
       <GenreTab currentGenre={genre} />
       {branches && branches.map((section, index) => (
-        <React.Fragment key={index}>
+        <React.Fragment key={section.slug}>
           <HomeSectionRenderer section={section} order={index} genre={genre} />
         </React.Fragment>
       ))}

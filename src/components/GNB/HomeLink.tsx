@@ -45,7 +45,7 @@ const HomeLink: React.FC<Props> = (props) => {
       as={`/${genre}`}
       passHref={passHref}
     >
-      {props.children}
+      {children}
     </Link>
   );
 };

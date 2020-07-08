@@ -143,11 +143,11 @@ const BookDesc = styled.p`
   ${orBelow(BreakPoint.LG, 'display: none;')}
 `;
 
-function StarCount(props: { count: number }) {
+function StarCount({ count }: { count: number }) {
   return (
     <SearchBookMetaField type="rating_count">
       (
-      {props.count.toLocaleString('ko-KR')}
+      {count.toLocaleString('ko-KR')}
       )
     </SearchBookMetaField>
   );

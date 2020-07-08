@@ -1,5 +1,5 @@
-import MainTab from './MainTab';
+import GlobalNavigationMainTap from './MainTab';
 import GenreTab from './GenreTab';
 import SearchCategoryTab from './SearchCategoryTab';
 
-export { GenreTab, MainTab, SearchCategoryTab };
+export { GenreTab, GlobalNavigationMainTap as MainTab, SearchCategoryTab };

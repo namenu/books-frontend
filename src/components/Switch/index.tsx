@@ -46,14 +46,14 @@ interface Props extends Omit<React.HTMLProps<HTMLInputElement>, 'type' | 'onChan
 }
 
 export default function Switch(props: Props) {
-  const { onChange, ...restProps } = props;
+  const { onChange, checked, ...restProps } = props;
   const handleChange = React.useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
     onChange?.(e.target.checked);
   }, [onChange]);
 
   return (
-    <Container checked={props.checked}>
-      <Input {...restProps} type="checkbox" onChange={handleChange} />
+    <Container checked={checked}>
+      <Input {...restProps} checked={checked} type="checkbox" onChange={handleChange} />
     </Container>
   );
 }

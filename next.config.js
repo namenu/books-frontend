@@ -14,7 +14,6 @@ const nextSourceMaps = require('@zeit/next-source-maps')({
   devtool: 'hidden-source-map',
 });
 const SentryCliPlugin = require('@sentry/webpack-plugin');
-const { InjectManifest } = require('workbox-webpack-plugin');
 
 require('dotenv').config(process.env.STAGE === 'production' ? {
   path: path.resolve(process.cwd(), '.env.production'),
@@ -86,18 +85,6 @@ const nextConfig = {
 
       return entries;
     };
-
-    config.plugins.push(
-      new InjectManifest({
-        swSrc: 'src/service-worker.js',
-        exclude: [
-          /\.map$/,
-          /\/pages\/partials\//,
-          /build-manifest\.json/,
-          /manifest\.webmanifest/,
-        ],
-      }),
-    );
 
     config.plugins.push(new webpack.DefinePlugin({
       'process.env.USE_CSR': JSON.stringify(process.env.USE_CSR),

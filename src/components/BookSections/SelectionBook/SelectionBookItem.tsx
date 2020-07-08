@@ -21,10 +21,11 @@ const SelectionBookItem: React.FC<Props> = (props) => {
     slug,
     order,
     className,
+    type,
   } = props;
   const { b_id: bId } = book;
-  const ratingInfo = props.type === 'HomeMdSelection'
-    ? props.book.rating
+  const ratingInfo = type === 'HomeMdSelection'
+    ? book.rating
     : undefined;
 
   const handleClick = useCallback(() => {

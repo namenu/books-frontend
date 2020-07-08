@@ -20,8 +20,8 @@ const sentryOptions = {
     "Unexpected token 'else'",
     'Let/Const 다시 선언',
     'ReferenceError: Let/Const 다시 선언',
-    'TypeError: 특정 호스트 이름을 가진\n' + '서버를 찾을 수 없습니다.',
-    '특정 호스트 이름을 가진\n' + '서버를 찾을 수 없습니다.\n',
+    `TypeError: 특정 호스트 이름을 가진
+    서버를 찾을 수 없습니다.`,
     'Unexpected identifier',
     'Unexpected end of input',
     'TypeError: WebKit에 내부 오류 발생',

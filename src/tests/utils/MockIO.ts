@@ -1,6 +1,8 @@
 export default class MockIO {
   elements: Set<Element> = new Set();
+
   static visibleElements: Set<Element> = new Set();
+
   static activeIOs: Set<MockIO> = new Set();
 
   constructor(
@@ -39,6 +41,7 @@ export default class MockIO {
       return;
     }
     MockIO.visibleElements.add(e);
+    // eslint-disable-next-line no-restricted-syntax
     for (const io of MockIO.activeIOs.values()) {
       if (io.elements.has(e)) {
         io.changeVisibility(e, true);
@@ -51,6 +54,7 @@ export default class MockIO {
       return;
     }
     MockIO.visibleElements.delete(e);
+    // eslint-disable-next-line no-restricted-syntax
     for (const io of MockIO.activeIOs.values()) {
       if (io.elements.has(e)) {
         io.changeVisibility(e, false);

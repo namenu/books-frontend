@@ -1,3 +1,4 @@
+import React from 'react';
 import faviconWin8 from 'src/assets/favicon/favicon_win8.png';
 import favicon from 'src/assets/favicon/favicon.ico';
 import appleIcon57 from 'src/assets/favicon/apple-icon-57x57.png';

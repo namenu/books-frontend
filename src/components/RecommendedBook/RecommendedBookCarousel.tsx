@@ -74,7 +74,7 @@ function RecommendedBookCarousel(props: Omit<RecommendedBookProps, 'title'>) {
           />
         )}
       </BooksCarousel>
-      {props.items.length > 6 && (
+      {items.length > 6 && (
         <form key="arrows">
           <Arrow
             onClickHandler={handleLeftArrow}

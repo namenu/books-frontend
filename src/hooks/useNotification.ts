@@ -175,7 +175,7 @@ export function NotificationProvider(props: { children?: React.ReactNode }) {
     },
     [token],
   );
-
+  const { children } = props;
   return React.createElement(
     Context.Provider,
     {
@@ -186,7 +186,7 @@ export function NotificationProvider(props: { children?: React.ReactNode }) {
         requestFetchNotifications,
       },
     },
-    props.children,
+    children,
   );
 }
 

@@ -9,7 +9,7 @@ import { END } from 'redux-saga';
 import React, { ErrorInfo } from 'react';
 import { UAParser } from 'ua-parser-js';
 
-import GNB from 'src/components/GNB';
+import GlobalNavigationBar from 'src/components/GNB';
 import { defaultTheme, partialResetStyles, resetStyles } from 'src/styles';
 import Footer from 'src/components/Footer';
 import { PartialSeparator } from 'src/components/Misc';
@@ -60,28 +60,11 @@ class StoreApp extends App<StoreAppProps> {
     };
   }
 
-  public async serviceWorkerInit() {
-    try {
-      if ('serviceWorker' in navigator) {
-        // 서비스 워커 일단 끔
-        // const { Workbox } = await import('workbox-window');
-        // const wb = new Workbox('/service-worker.js');
-        // wb.addEventListener('waiting', event => {});
-        // wb.addEventListener('activated', event => {});
-        // wb.addEventListener('installed', event => {});
-        // wb.register();
-      }
-    } catch (error) {
-      sentry.captureException(error);
-    }
-  }
-
   public async componentDidMount() {
     const isPartials = this.props.router.pathname
       .toLowerCase()
       .startsWith('/partials/');
     if (!isPartials) {
-      this.serviceWorkerInit();
       window.requestIdleCallback(initializeEventTracker, { timeout: 500 });
     }
     // Windows에서만 웹폰트 로드
@@ -179,7 +162,7 @@ class StoreApp extends App<StoreAppProps> {
             <NotificationProvider>
               <ThemeProvider theme={defaultTheme}>
                 <ViewportIntersectionProvider rootMargin="100px">
-                  <GNB
+                  <GlobalNavigationBar
                     searchKeyword={query.search || query.q}
                     isPartials={false}
                     isLoginForPartials={query.is_login}

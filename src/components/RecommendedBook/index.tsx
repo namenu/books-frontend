@@ -54,26 +54,33 @@ const RecommendedBookWrapper = styled.section<{ bg: 'white' | 'dark' }>`
 `;
 
 export default function RecommendedBook(props: RecommendedBookProps) {
-  const { theme, slug, genre } = props;
+  const {
+    theme,
+    slug,
+    genre,
+    title,
+    type,
+    items,
+  } = props;
   const isTablet = useIsTablet();
   return (
     <RecommendedBookWrapper bg={theme}>
-      <SectionTitle>{props.title}</SectionTitle>
+      <SectionTitle>{title}</SectionTitle>
       <div>
         {isTablet ? (
           <RecommendedBookList
-            type={props.type}
+            type={type}
             slug={slug}
-            items={props.items}
+            items={items}
             theme={theme}
             genre={genre}
           />
         ) : (
           <RecommendedBookCarousel
-            type={props.type}
+            type={type}
             slug={slug}
             genre={genre}
-            items={props.items}
+            items={items}
             theme={theme}
           />
         )}

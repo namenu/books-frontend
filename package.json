@@ -55,8 +55,7 @@
     "use-debounce": "^3.1.0",
     "use-immer": "^0.4.0",
     "webfontloader": "^1.6.28",
-    "workbox-webpack-plugin": "^4.3.1",
-    "workbox-window": "^4.3.1"
+    "workbox-webpack-plugin": "^4.3.1"
   },
   "devDependencies": {
     "@babel/core": "^7.7.4",
@@ -86,9 +85,8 @@
     "@types/ua-parser-js": "^0.7.33",
     "@types/webfontloader": "^1.6.29",
     "@types/webpack-env": "^1.15.1",
-    "@types/workbox-window": "^4.3.3",
     "@typescript-eslint/eslint-plugin": "^2.16.0",
-    "@typescript-eslint/parser": "^2.16.0",
+    "@typescript-eslint/parser": "^3.6.0",
     "babel-jest": "^24.9.0",
     "babel-plugin-emotion": "^10.0.23",
     "babel-plugin-module-resolver": "^4.0.0",

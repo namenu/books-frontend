@@ -70,7 +70,7 @@ const SelectionBookCarousel: React.FC<SelectionBookListProps> = (props) => {
           />
         )}
       </BooksCarousel>
-      {props.items.length > 6 && (
+      {items.length > 6 && (
         <form css={css`height: 0;`}>
           <Arrow
             label="이전"

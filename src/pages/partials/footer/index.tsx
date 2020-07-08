@@ -12,16 +12,14 @@ interface FooterProps {
 }
 
 export class PartialFooter extends React.Component<FooterProps> {
-  public static async getInitialProps(initialProps: ConnectedInitializeProps) {
-    // Fix me
-    // will get notice items
-    // const result = await axios.get('https://randomuser.me/api/');
+  public static getInitialProps(initialProps: ConnectedInitializeProps) {
     return { ...initialProps.query };
   }
 
   public render() {
+    const { props } = this;
     return (
-      <ThemeProvider theme={!this.props.theme ? defaultTheme : darkTheme}>
+      <ThemeProvider theme={!props.theme ? defaultTheme : darkTheme}>
         <PartialSeparator name="FOOTER" wrapped>
           <Footer />
         </PartialSeparator>

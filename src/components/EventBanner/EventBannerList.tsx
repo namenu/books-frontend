@@ -49,7 +49,7 @@ const EventBannerList: React.FC<EventBannerListProps> = (props) => {
   const ref = useViewportIntersectionOnce<HTMLUListElement>(sendDisplayEvent);
   return (
     <List ref={ref}>
-      {props.items.slice(0, 4).map((item, index) => (
+      {items.slice(0, 4).map((item, index) => (
         <EventBannerItem key={index}>
           <a
             href={item.url}
